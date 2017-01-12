@@ -4,12 +4,13 @@ module.exports = {
     var data = {};
 
     data.mesdata = {
-      title: "Titre",
-      content: "Contenu",
+      title: "Présentation",
+      content: "Entrer une description",
       /**uneautre = {
         prop1_de_uneautre = 1,
         prop2_de_uneautre = "sous-titre",
       }**/
+      
     };
 
     data.user= req.user;

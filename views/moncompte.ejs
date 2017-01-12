@@ -1,7 +1,27 @@
-
 <h1>Mon compte</h1>
-<p> Ca marche </p>
 
-<h2> <%= mesdata.title %> </h2>
-<h2> <%= user.email %> </h2>
-<h5> <%= mesdata.content %> </h5>
+<%if (user.Description == null){%>
+<p> Il n'y a pas de description </p>
+<%} else {%> <p><%=user.Description %></p>
+<%}%>
+
+<h3> <%= mesdata.title %> </h3>
+
+<%if (user.prenom == null){%>
+<p> Il n'y a pas de prénom </p>
+<%} else {%> <p><%=user.prenom %></p>
+<%}%>
+
+<%if (user.nom == null){%>
+<p> Il n'y a pas de nom </p>
+<%} else {%> <p><%=user.nom %></p>
+<%}%>
+
+<a href="mailto:<%=user.email%>"<h4> <%= user.email %> </h4>
+
+<div class="identifiant">
+          <a href="http://localhost:1337/identifiant"><h3>Changer mes identifiants</h3></a>
+</div>
+
+
+

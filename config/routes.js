@@ -33,7 +33,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'homepage'
+    view: 'homepage',
   },
 
   'GET /test': {
@@ -56,6 +56,11 @@ module.exports.routes = {
   'get /moncompte': {
     controller: 'UserController',
     action:'moncompte'
+  },
+
+  'get /identifiant': {
+    controller: 'IdController',
+    action:'identifiant'
   }
 
   /***************************************************************************
