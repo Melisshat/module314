@@ -9,36 +9,30 @@ var bcrypt = require('bcrypt');
 
 module.exports = {
   attributes: {
-    email: {
-      type: 'email',
-      required: true,
-      unique: true
+    numRue: {
+      type: 'string',
+      minLength: 1,
+      maxLength: 4,
+      required: true
     },
-    password: {
+    rue: {
+      type: 'string',
+      minLength: 5,
+      required: true,
+    },
+    ville: {
       type: 'string',
       minLength: 6,
       required: true
     },
-    Description: {
+    codePostal: {
       type: 'string',
-      minLength: 6,
-      required: false
+      minLength: 4,
+      maxLenght: 10,
+      required: true
     },
-    prenom: {
-      type: 'string',
-      minLength: 6,
-      required: false
-    },
-    nom: {
-      type: 'string',
-      minLength: 6,
-      required: false
-    },
-    addresses: {
-      type: 'string',
-      required: false,
-      collection: 'address',
-      via: 'owner'
+    owner:{
+      model: 'user'
     },
     toJSON: function() {
       var obj = this.toObject();

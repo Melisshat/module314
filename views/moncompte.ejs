@@ -17,11 +17,21 @@
 <%} else {%> <p><%=user.nom %></p>
 <%}%>
 
+<%if (user.addresses.size == null){%>
+<p> Il n'y a pas d'adresse </p>
+<%} else {%>
+  <p><%=user.addresses[0].numRue %></p>
+  <p><%=user.addresses[0].rue %></p>
+  <p><%=user.addresses[0].ville %></p>
+  <p><%=user.addresses[0].codePostal %></p>
+<%}%>
+
 <a href="mailto:<%=user.email%>"<h4> <%= user.email %> </h4>
 
 <div class="identifiant">
           <a href="http://localhost:1337/identifiant"><h3>Changer mes identifiants</h3></a>
 </div>
-
-
+<div class="address">
+          <a href="http://localhost:1337/address"><h3>Ajouter une Adresse</h3></a>
+</div>
 

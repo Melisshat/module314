@@ -61,8 +61,12 @@ module.exports.routes = {
   'get /identifiant': {
     controller: 'IdController',
     action:'identifiant'
-  }
+  },
 
+  'get /address': {
+    controller: 'AddressController',
+    action:'address'
+  }
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

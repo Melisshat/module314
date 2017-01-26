@@ -1,0 +1,23 @@
+<h1> <%= mesdata.title %> </h1>
+
+  <form method="POST" action="/address/<%= address.id%>" >
+    <p>nomRue :  </p><input type="text" name="nomRue" >
+  </form>
+
+  <form method="POST" action="/address/<%= address.id%>" >
+      <p>rue :  </p><input type="text" name="rue" >
+  </form>
+
+  <form method="POST" action="/address/<%= address.id%>" >
+        <p>ville :  </p><input type="text" name="ville" >
+  </form>
+
+  <form method="POST" action="/address/<%= address.id%>" >
+          <p>codePostal :  </p><input type="text" name="codePostal" >
+  </form>
+
+   <input type="submit" value="submit">
+
+  <div class="compte">
+            <a href="http://localhost:1337/moncompte"><h3>Retour à mon compte</h3></a>
+  </div>
