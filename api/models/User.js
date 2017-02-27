@@ -35,8 +35,6 @@ module.exports = {
       required: false
     },
     addresses: {
-      type: 'string',
-      required: false,
       collection: 'address',
       via: 'owner'
     },

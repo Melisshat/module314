@@ -30,10 +30,14 @@ module.exports = {
           message: info.message,
           user: user
         });**/
-        res.redirect('/');
+        res.redirect('/moncompte');
       });
 
     })(req, res);
+  },
+
+  signup: function(req, res){
+    res.redirect('/moncompte')
   },
 
   logout: function(req, res) {

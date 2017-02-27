@@ -1,37 +1,72 @@
-<h1>Mon compte</h1>
+<!DOCTYPE html>
 
-<%if (user.Description == null){%>
-<p> Il n'y a pas de description </p>
-<%} else {%> <p><%=user.Description %></p>
-<%}%>
+<html>
 
-<h3> <%= mesdata.title %> </h3>
+<head></head>
 
-<%if (user.prenom == null){%>
-<p> Il n'y a pas de prénom </p>
-<%} else {%> <p><%=user.prenom %></p>
-<%}%>
+  <body>
 
-<%if (user.nom == null){%>
-<p> Il n'y a pas de nom </p>
-<%} else {%> <p><%=user.nom %></p>
-<%}%>
+    <h1>Mon compte</h1>
 
-<%if (user.addresses.size == null){%>
-<p> Il n'y a pas d'adresse </p>
-<%} else {%>
-  <p><%=user.addresses[0].numRue %></p>
-  <p><%=user.addresses[0].rue %></p>
-  <p><%=user.addresses[0].ville %></p>
-  <p><%=user.addresses[0].codePostal %></p>
-<%}%>
+    <%if (user.Description == null){%>
+    <p> Il n'y a pas de description </p>
+    <%} else {%> <p><%=user.Description %></p>
+    <%}%>
 
-<a href="mailto:<%=user.email%>"<h4> <%= user.email %> </h4>
+    <h3> Presentation </h3>
 
-<div class="identifiant">
-          <a href="http://localhost:1337/identifiant"><h3>Changer mes identifiants</h3></a>
-</div>
-<div class="address">
-          <a href="http://localhost:1337/address"><h3>Ajouter une Adresse</h3></a>
-</div>
+    <%if (user.prenom == null){%>
+    <p> Il n'y a pas de prénom </p>
+    <%} else {%> <p><%=user.prenom %></p>
+    <%}%>
 
+    <%if (user.nom == null){%>
+    <p> Il n'y a pas de nom </p>
+    <%} else {%> <p><%=user.nom %></p>
+    <%}%>
+
+    <%if (user.addresses.size == null){%>
+    <p> Il n'y a pas d'adresse </p>
+    <%} else {%>
+      <p><%=user.addresses[0].numRue %></p>
+      <p><%=user.addresses[0].rue %></p>
+      <p><%=user.addresses[0].ville %></p>
+      <p><%=user.addresses[0].codePostal %></p>
+    <%}%>
+
+    <a href="mailto:<%=user.email%>"<h5> <%= user.email %> </h5></a>
+
+    <div>
+      <h1> Modifier les informations de mon compte </h1>
+
+        <form method="POST" action="/User/<%= user.id%>" >
+          <p>Description :  </p><input type="text" name="Description" >
+          <br />
+          <p>Prenom :  </p><input type="text" name="prenom" >
+          <br />
+          <p>Nom :  </p><input type="text" name="nom" >
+          <br />
+          <input type="submit" value="submit">
+        </form>
+
+      <h1> Modifier mon addresse </h1>
+
+        <form method="POST" action="/Address/<%= user.addresses[0].id %>" >
+          <p>nomRue :  </p><input type="text" name="nomRue" >
+          <br />
+          <p>rue :  </p><input type="text" name="rue" >
+          <br />
+          <p>ville :  </p><input type="text" name="ville" >
+          <br />
+          <p>codePostal :  </p><input type="text" name="codePostal" >
+          <br />
+          <input type="submit" value="submit">
+        </form>
+    </div>
+
+    <div class="compte">
+      <a href="http://localhost:1337/moncompte"><h3>Refresh mon compte</h3></a>
+    </div>
+
+  </body>
+</html>

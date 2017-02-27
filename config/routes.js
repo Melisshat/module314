@@ -36,11 +36,6 @@ module.exports.routes = {
     view: 'homepage',
   },
 
-  'GET /test': {
-    controller: 'TestController',
-    action: 'test'
-  },
-
   'get /login': {
     view: 'login'
   },
@@ -56,17 +51,12 @@ module.exports.routes = {
   'get /moncompte': {
     controller: 'UserController',
     action:'moncompte'
-  },
-
-  'get /identifiant': {
-    controller: 'IdController',
-    action:'identifiant'
-  },
-
-  'get /address': {
-    controller: 'AddressController',
-    action:'address'
   }
+
+  /**'post /moncompte/uploadAvatar':{
+    controller: 'UserController',
+    action: 'uploadAvatar'
+  }**/
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
