@@ -51,12 +51,17 @@ module.exports.routes = {
   'get /moncompte': {
     controller: 'UserController',
     action:'moncompte'
+  },
+
+  'post /moncompte/uploadAvatar': {
+    controller: 'UserController',
+    action:'uploadAvatar'
+  },
+
+  'get /participant': {
+    view: 'participant'
   }
 
-  /**'post /moncompte/uploadAvatar':{
-    controller: 'UserController',
-    action: 'uploadAvatar'
-  }**/
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

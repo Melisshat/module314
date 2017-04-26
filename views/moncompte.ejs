@@ -65,8 +65,16 @@
     </div>
 
     <div class="compte">
-      <a href="http://localhost:1337/moncompte"><h3>Refresh mon compte</h3></a>
+      <a href="/moncompte"><h3>Refresh mon compte</h3></a>
     </div>
+
+    <form action="/moncompte/uploadAvatar" enctype="multipart/form-data" method="post">
+        <input type="text" name="title">
+        <br>
+        <input type="file" name="avatar" multiple="multiple">
+        <br>
+        <input type="submit" value="Upload">
+    </form>
 
   </body>
 </html>

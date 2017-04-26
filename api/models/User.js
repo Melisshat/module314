@@ -38,6 +38,12 @@ module.exports = {
       collection: 'address',
       via: 'owner'
     },
+
+    avatar:{
+      type: 'string',
+      required: false
+    },
+
     toJSON: function() {
       var obj = this.toObject();
       delete obj.password;
