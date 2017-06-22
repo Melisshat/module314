@@ -1,9 +1,22 @@
 var path = require ("path");
 
 module.exports = {
-  moncompte: function (req, res) {
-    var data = {};
 
+  test: function(req, res){
+    var where = {id:req.user.id};
+
+    User
+      .findOne(where)
+      .populate('addresses')
+      .exec(function(err, user){
+        return res.json(user);
+      });
+  },
+
+  moncompte: function (req, res) {
+    var where = {id: req.user.id};
+
+    var data = {};
     data.mesdata = {
       title: "Présentation",
       content: "Entrer une description",
@@ -11,17 +24,16 @@ module.exports = {
 
     data.user = req.user;
 
-    var where = {id: req.user.id};
-
     User.findOne(where)
       .populate('addresses')
       .exec(function (err, user) {
-        console.log(user);
+        console.log(data);
         data.user = user;
         return res.view('moncompte', data);
       });
 
   },
+
 
 
     uploadAvatar: function (req, res) {

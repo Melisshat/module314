@@ -9,7 +9,7 @@ module.exports = {
     rue: {
       type: 'string',
       minLength: 5,
-      required: true,
+      required: true
     },
     ville: {
       type: 'string',
