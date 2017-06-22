@@ -65,7 +65,7 @@ $(document).ready(function() {
   });
 
   $('#set_address').click(function () {
-    $.post("/address/" + addressId, {rue:$('#getNewAddress').text()}, function (data) {
+    $.post("/address/" + addressId, {rue:"testsjjj"}, function (data) {
         alert(data);
     });
   });
